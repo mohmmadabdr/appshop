@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "619400005566",
+    "project_id": "appecommaq01-784dd",
+    "storage_bucket": "appecommaq01-784dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619400005566:android:c0209dd480eb76ce231bef",
+        "android_client_info": {
+          "package_name": "com.example.appshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619400005566-qmv2di3j8jp12ihtofcck9f4pbksln4c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appshop",
+            "certificate_hash": "61a3d74933ff22c35495bd611c23da62c515cd0c"
+          }
+        },
+        {
+          "client_id": "619400005566-rvasoqqb7rtnvb5vs1e3ch5qbk550557.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY1ohAu8bj0kqQjO9I_Aatk4rTm-MCPT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619400005566-rvasoqqb7rtnvb5vs1e3ch5qbk550557.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "619400005566-99hkkktiu1d28h8k257mvd29tukt0kqv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.seaFoodAqaba"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
