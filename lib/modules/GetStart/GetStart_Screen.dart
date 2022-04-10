@@ -28,47 +28,25 @@ class GetStart_Screen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 52.r,
-                            backgroundColor: colorw,
-                          ),
-                          CircleAvatar(
-                            radius: 50.r,
-                            backgroundColor: colorw,
-                            backgroundImage: AssetImage(
-                              "assets/images/logo_Fack.png",
-                            ),
-                          ),
-                        ],
-                      ),
                       Padding(
-                        padding: const EdgeInsets.all(30.0),
+                        padding: const EdgeInsets.only(bottom: 200),
                         child: Text(
                           "AppShop",
                           style: TextStyle(
                             color: colorw,
-                            fontSize: 18.sp,
+                            fontSize: 32.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
-                      // SizedBox(
-                      //   height: size * 0.58,
-                      // ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 100),
-                        child: botton(
-                          width: 230.w,
-                          colorbotton: colorpreblue,
-                          colortext: colorw,
-                          title: "Register",
-                          onTap: () {
-                            Get.to(Regster_Screen());
-                          },
-                        ),
+                      botton(
+                        width: 230.w,
+                        colorbotton: colorpreblue,
+                        colortext: colorw,
+                        title: "Register",
+                        onTap: () {
+                          Get.to(Regster_Screen());
+                        },
                       ),
                       botton(
                         width: 230.w,

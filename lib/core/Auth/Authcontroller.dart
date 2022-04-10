@@ -11,6 +11,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../models/user_model/user_model.dart';
 import '../service/firrstore.dart';
+import '../service/lacal_storage_user.dart';
 
 class Auth_controller extends GetxController {
   final GoogleSignIn? _googleSignIn = GoogleSignIn(scopes: ['email']);
@@ -39,22 +40,48 @@ class Auth_controller extends GetxController {
     super.onClose();
   }
 
-  void googleSignInMethod() async {
-    final GoogleSignInAccount? googleUser = await _googleSignIn!.signIn();
-    print(googleUser);
-    GoogleSignInAuthentication googleSignInAuthentication =
-        await googleUser!.authentication;
+  // void googleSignInMethod() async {
+  //   final GoogleSignInAccount? googleUser = await _googleSignIn!.signIn();
+  //   print(googleUser);
+  //   GoogleSignInAuthentication googleSignInAuthentication =
+  //       await googleUser!.authentication;
 
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      idToken: googleSignInAuthentication.idToken,
-      accessToken: googleSignInAuthentication.accessToken,
-    );
+  //   final AuthCredential credential = GoogleAuthProvider.credential(
+  //     idToken: googleSignInAuthentication.idToken,
+  //     accessToken: googleSignInAuthentication.accessToken,
+  //   );
 
-    await auth.signInWithCredential(credential).then((user) {
-      saveUser(user);
-      Get.offAll(Home_Screen());
-    });
-  }
+  //   await auth.signInWithCredential(credential).then((user) {
+  //     saveUser(user);
+  //     Get.offAll(Home_Screen());
+  //   });
+  // }
+  // void googleSignInMethod() async {
+  //   try {
+  //     GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+  //     final GoogleSignInAccount? _googleUser = await _googleSignIn.signIn();
+
+  //     GoogleSignInAuthentication _googleSignInAuthentication =
+  //         await _googleUser!.authentication;
+  //     final _googleAuthCredential = GoogleAuthProvider.credential(
+  //       idToken: _googleSignInAuthentication.idToken,
+  //       accessToken: _googleSignInAuthentication.accessToken,
+  //     );
+
+  //     await auth.signInWithCredential(_googleAuthCredential).then((user) {
+  //       saveUser(user);
+  //     });
+  //     Get.offAll(Home_Screen());
+  //   } catch (error) {
+  //     String errorMessage =
+  //         error.toString().substring(error.toString().indexOf(' ') + 1);
+  //     Get.snackbar(
+  //       'Failed to login..',
+  //       errorMessage,
+  //       snackPosition: SnackPosition.BOTTOM,
+  //     );
+  //   }
+  // }
 
   // void facebookSignInMethod() async {
   //   final LoginResult result = await FacebookAuth.instance.login();
@@ -118,19 +145,19 @@ class Auth_controller extends GetxController {
     }
   }
 
-  void nav() {
-    switch (Controller.selectedIndex) {
-      case 0:
-        gru_car_prod();
-        update();
-        break;
-      case 1:
-        gru_car_prod_1();
-        update();
-        break;
-        break;
-    }
-  }
+  // void nav() {
+  //   switch (Controller.selectedIndex) {
+  //     case 0:
+  //       gru_car_prod();
+  //       update();
+  //       break;
+  //     case 1:
+  //       gru_car_prod_1();
+  //       update();
+  //       break;
+  //       break;
+  //   }
+  // }
 
   void siginup(Widget page) async {
     await auth.signOut();
@@ -155,13 +182,31 @@ class Auth_controller extends GetxController {
     }
   }
 
+//   void saveUser(UserCredential user) async {
+//     await FireStoreUser().addUserToFireStore(UserModel(
+//       userId: user.user!.uid,
+//       email: user.user!.email,
+//       lastname: lastname == null ? user.user!.displayName : lastname,
+//       firstname: firstname == null ? user.user!.displayName : firstname,
+//       pic: '',
+//     ));
+//   }
+// }
   void saveUser(UserCredential user) async {
-    await FireStoreUser().addUserToFireStore(UserModel(
+    UserModel _userModel = UserModel(
       userId: user.user!.uid,
-      email: user.user!.email,
+      email: user.user!.email!,
       lastname: lastname == null ? user.user!.displayName : lastname,
       firstname: firstname == null ? user.user!.displayName : firstname,
-      pic: '',
-    ));
+      pic: user.user!.photoURL == null
+          ? 'default'
+          : user.user!.photoURL! + "?width=400",
+    );
+    FirestoreUser().addUserToFirestore(_userModel);
+    saveUserLocal(_userModel);
+  }
+
+  void saveUserLocal(UserModel userModel) async {
+    LocalStorageUser.setUserData(userModel);
   }
 }

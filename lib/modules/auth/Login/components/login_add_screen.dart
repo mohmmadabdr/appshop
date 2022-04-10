@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../shared/Widget/components/textfeild_add.dart';
-import '../../../../core/Auth/controller.dart';
+import '../../../../core/Auth/Authcontroller.dart';
 
 class Login_Add_TextFeild extends StatelessWidget {
   var loginFormKey = GlobalKey<FormState>();

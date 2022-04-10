@@ -16,7 +16,9 @@ class Search_Cart extends StatelessWidget {
             width: 285.w,
             height: 50.h,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), color: colorgrey),
+              borderRadius: BorderRadius.circular(10),
+              color: colorgrey,
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: new TextFormField(
@@ -25,6 +27,7 @@ class Search_Cart extends StatelessWidget {
                   icon: Icon(
                     Icons.search,
                     color: colorw,
+                    size: 30,
                   ),
                   hintStyle: TextStyle(
                     fontSize: 17,

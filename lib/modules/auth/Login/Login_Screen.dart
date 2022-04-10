@@ -8,7 +8,7 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 import '../../../shared/Widget/components/Background.dart';
 import '../../../shared/Widget/constants.dart';
-import '../../../core/Auth/controller.dart';
+import '../../../core/Auth/Authcontroller.dart';
 import 'components/login_add_screen.dart';
 
 class Login_Screen extends StatelessWidget {
@@ -113,7 +113,7 @@ class Login_Screen extends StatelessWidget {
                         ),
                         botton_Auth(
                           onTap: () {
-                            Controller.googleSignInMethod();
+                            // Controller.googleSignInMethod();
                           },
                           title: "Google",
                           colortext: colorw,

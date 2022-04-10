@@ -62,7 +62,7 @@ Widget botton_Auth({
                     padding: const EdgeInsets.only(left: 100),
                     child: Text(
                       "${title}",
-                      style: TextStyle(fontSize: 14.sp, color: colortext),
+                      style: TextStyle(fontSize: 24.sp, color: colortext),
                     ),
                   )
                 ],

@@ -70,10 +70,8 @@ class product_screen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10, bottom: 10),
-                child: Center(
-                  child: Text("Choose your new Name Produrt "),
-                ),
+                padding: const EdgeInsets.only(top: 10, bottom: 10, left: 15),
+                child: Text("Choose your new Name Produrt "),
               ),
               Container(
                 child: ListView.separated(

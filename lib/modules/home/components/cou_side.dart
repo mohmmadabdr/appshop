@@ -5,20 +5,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../shared/Widget/constants.dart';
 
 class Cou_Slide extends StatelessWidget {
+  List<String> image_Side = [
+    "assets/images/Deals_1.webp",
+    "assets/images/Deals_2.png",
+    "assets/images/Deals_3.png",
+  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 5, right: 5),
       child: CarouselSlider(
-        items: [1, 2, 3, 4, 5].map((i) {
+        items: [image_Side.length].map((i) {
           return Builder(
             builder: (BuildContext context) {
               return Container(
                 width: MediaQuery.of(context).size.width,
                 // margin: EdgeInsets.only(right: 15),
                 decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/Deals_2.png"),
+                    fit: BoxFit.cover,
+                  ),
                   borderRadius: BorderRadius.circular(5.r),
-                  color: colorpreblue,
                 ),
               );
             },

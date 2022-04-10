@@ -1,4 +1,4 @@
-import 'package:appshop/core/Auth/controller.dart';
+import 'package:appshop/core/Auth/Authcontroller.dart';
 import 'package:appshop/shared/Widget/components/botton.dart';
 import 'package:appshop/shared/Widget/constants.dart';
 import 'package:flutter/material.dart';

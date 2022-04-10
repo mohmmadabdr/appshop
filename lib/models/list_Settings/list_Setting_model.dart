@@ -22,7 +22,7 @@ List menu_Setting = <MenuItem_Settings>[
   MenuItem_Settings(
     Icons.person,
     'Profite',
-    null,
+    Settings_Screen(),
     "dfsdfsdfsdf",
     colorpreblue,
   ),
@@ -36,21 +36,21 @@ List menu_Setting = <MenuItem_Settings>[
   MenuItem_Settings(
     Icons.receipt_long,
     'Order',
-    null,
+    Settings_Screen(),
     "",
     Colors.redAccent,
   ),
   MenuItem_Settings(
     Icons.bug_report,
     'Report',
-    null,
+    Settings_Screen(),
     "",
     Colors.greenAccent,
   ),
   MenuItem_Settings(
     Icons.gps_fixed,
     'Location',
-    null,
+    Settings_Screen(),
     "",
     colorpreblue,
   ),

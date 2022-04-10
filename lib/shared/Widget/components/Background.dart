@@ -13,14 +13,6 @@ Widget Background_GetStart(
       alignment: Alignment.center,
       children: <Widget>[
         Positioned(
-          child: Image.asset(
-            "assets/images/BackGround.png",
-            width: double.infinity,
-            height: size.height,
-            fit: BoxFit.cover,
-          ),
-        ),
-        Positioned(
           top: 0,
           child: Image.asset(
             "assets/images/back_3.png",

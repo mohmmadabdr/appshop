@@ -20,18 +20,14 @@ class Settings_Screen extends StatelessWidget {
         padding: const EdgeInsets.only(left: 15, right: 15),
         child: Column(
           children: [
-            botton_porfile(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 10, top: 10),
-              child: Divider(
-                height: 10.h,
-                color: colorb,
-                indent: 10,
-              ),
+              padding: const EdgeInsets.only(bottom: 40),
+              child: botton_porfile(),
             ),
             list_vew_botton(),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.only(top: 40),
+              padding: const EdgeInsets.only(bottom: 20),
               child: downispage(),
             ),
           ],

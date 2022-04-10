@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../shared/Widget/constants.dart';
-import '../../../core/Auth/controller.dart';
+import '../../../core/Auth/Authcontroller.dart';
 import 'components/pin_code.dart';
 
 class VerificationCode_Screen extends StatelessWidget {

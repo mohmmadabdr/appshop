@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../core/Auth/controller.dart';
+import '../../core/Auth/Authcontroller.dart';
 import '../../shared/Widget/constants.dart';
 import '../GetStart/GetStart_Screen.dart';
 import 'components/cou_side.dart';
@@ -13,7 +13,6 @@ import 'components/search_cart.dart';
 import 'components/up_page.appbar.dart';
 
 class Home_Screen extends StatelessWidget {
-  final Auth_controller loginController = Get.find();
   var auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class Home_Screen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+            padding: EdgeInsets.only(left: 10, right: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
